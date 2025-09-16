@@ -23,3 +23,4 @@ open3d
 trimesh
 pymeshlab
 pygltflib
+requests
