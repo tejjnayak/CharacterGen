@@ -1,0 +1,32 @@
+name: Build and Push Docker Image to ECR
+
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to trigger the workflow
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Endor Labs SCA Security
+        uses: endorlabs/github-action@main
+        env: 
+          ENDOR_SCAN_PR: true
+          ENDOR_SCAN_GITHUB: true
+        with:
+          namespace: tej-learn
+          api: "https://api.endorlabs.com"
+          enable_github_action_token: true
+          scan_dependencies: true
+          scan_git_logs: true
+          github_token: ${{ secrets.GH_PR_TOKEN }}
+          scan_summary_output_type: table
