@@ -11,6 +11,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      pull-requests: write
 
     steps:
       # Checkout the repository
@@ -26,9 +27,9 @@ jobs:
           namespace: tej-learn
           api: "https://api.endorlabs.com"
           enable_github_action_token: true
+          enable_pr_comments: true
           scan_dependencies: true
           scan_git_logs: true
-          scan_ai_models: true
-          pr: false
+          pr: true
           github_token: ${{ secrets.GH_PR_TOKEN }}
           scan_summary_output_type: table
