@@ -24,3 +24,4 @@ trimesh
 pymeshlab
 pygltflib
 requests
+aiohttp
