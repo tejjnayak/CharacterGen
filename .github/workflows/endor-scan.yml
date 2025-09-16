@@ -3,7 +3,7 @@ name: Build and Push Docker Image to ECR
 on:
   push:
     branches:
-      - test  # Change this to the branch you want to trigger the workflow
+      - main  # Change this to the branch you want to trigger the workflow
 
 jobs:
   build-and-push:
@@ -19,6 +19,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Endor Labs SCA Security
+        if: github.event_name == 'pull_request'
         uses: endorlabs/github-action@main
         env: 
           ENDOR_SCAN_PR: false
