@@ -28,5 +28,6 @@ jobs:
           enable_github_action_token: true
           scan_dependencies: true
           scan_git_logs: true
+          pr: false
           github_token: ${{ secrets.GH_PR_TOKEN }}
           scan_summary_output_type: table
