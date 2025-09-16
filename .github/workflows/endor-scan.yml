@@ -20,7 +20,7 @@ jobs:
       - name: Endor Labs SCA Security
         uses: endorlabs/github-action@main
         env: 
-          ENDOR_SCAN_PR: true
+          ENDOR_SCAN_PR: false
           ENDOR_SCAN_GITHUB: true
         with:
           namespace: tej-learn
