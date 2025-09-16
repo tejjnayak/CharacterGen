@@ -23,3 +23,4 @@ open3d
 trimesh
 pymeshlab
 pygltflib
+aiohttp==3.12.13
