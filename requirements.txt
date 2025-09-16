@@ -1,5 +1,5 @@
 gradio
-rm_anime_bg[cpu]
+rm_anime_bg
 # for 2D_stage
 torch
 torchvision
